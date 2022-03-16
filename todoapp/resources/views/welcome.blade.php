@@ -67,8 +67,10 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+                <a>Date & Time: {{ date('d-m-y h:m:s') }}</a>
+                <a>Zone: <b> {{ date_default_timezone_get() }} </b> </a>
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Tasks</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

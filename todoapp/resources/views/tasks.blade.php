@@ -3,6 +3,12 @@
 @section('content')
 <h1>Task list</h1>
 <a type="button" href="/tasks/create " class="btn btn-primary">create Task</a>
+@if(Session()->has('status'))
+                <div class="alert alert-success">
+                    <button type="button" class="close" data-dismiss="alert">X</button>
+                    {{Session()->get('status')}}
+                </div>
+            @endif
 <table class="table">
     <thead>
         <tr>

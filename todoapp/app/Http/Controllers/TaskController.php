@@ -27,7 +27,7 @@ class TaskController extends Controller
     {
         $alltasks = todolist::all();
 
-        return view('tasks')->with('alltasks',$alltasks);
+        return view('tasks')->with('alltasks', $alltasks);
     }
 
     /**
@@ -54,7 +54,7 @@ class TaskController extends Controller
             'date'    => 'required',
             'time'    => 'required',
         ]);
-   
+
         $combinedDT = date('Y-m-d H:i:s', strtotime("$request->date $request->time"));
         $todolists_obj = new todolist();
         $todolists_obj->name     = $request->name;
@@ -63,14 +63,13 @@ class TaskController extends Controller
         $todolists_obj->deadline = $combinedDT;
 
         //if data stored succesuly
-        if($todolists_obj->save()){
-            Session()->flash('status',"Task is Added!");
-        }else{
-            Session()->flash('status',"Somrthing went wrong , please try again later!");
-    }
+        if ($todolists_obj->save()) {
+            Session()->flash('status', "Task is Added!");
+        } else {
+            Session()->flash('status', "Somrthing went wrong , please try again later!");
+        }
 
-    return(redirect('/tasks'));
-
+        return (redirect('/tasks'));
     }
 
     /**

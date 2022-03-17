@@ -30,6 +30,15 @@ class HomeController extends Controller
         //     print_r($userLocationData->timezone);   
         // }
         //Session::get('sessionTz')
+
+      
+
+
+
+
         return view('home');
     }
+
+
+
 }

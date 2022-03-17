@@ -14,7 +14,8 @@
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Task</th>
-            <th scope="col">DeadLine</th>
+            <th scope="col">DeadLine({{Session::get('sessionTz')}})</th>
+            <!-- <th scope="col">DeadLine({{Session::get('sessionTz')}})</th> -->
             <th scope="col">Status</th>
             <th scope="col">Action</th>
         </tr>
@@ -25,6 +26,7 @@
             <th scope="row">{{$task->name}}</th>
             <td>{{$task->task}}</td>
             <td>{{$task->deadline}}</td>
+            <!-- <td>{{$task->deadline}}</td> -->
             <td>{{$task->status == 1 ? "Active":"Completed"  }}</td>
             <td>
                 @if($task->status)

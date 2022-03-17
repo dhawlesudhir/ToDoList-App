@@ -50,10 +50,10 @@
                             @endif
                         @else
                         <li class="nav-item nav-link">
-                            Zone:{{ Session::get('sessionTz') }} 
+                            Current-TimeZone: <b>{{ Session::get('sessionTz') }} </b>
                         </li>
                         <li class="nav-item nav-link">
-                            Default:{{ date_default_timezone_get() }} 
+                            Application-TimeZone: <b> {{ ini_get('date.timezone') }}  </b>
                         </li>
 
                             <li class="nav-item dropdown">
